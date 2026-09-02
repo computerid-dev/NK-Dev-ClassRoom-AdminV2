@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Masuk — NK-Dev ClassRoom Admin</title>
+  <link rel="icon" href="/assets/icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="card card-pad auth-card">
+      <div class="row gap-2" style="margin-bottom: 20px;">
+        <img src="/assets/icons/icon-192.png" alt="Logo" style="width:36px;height:36px;border-radius:8px;" />
+        <div>
+          <h2 style="margin:0;">NK-Dev ClassRoom</h2>
+          <p style="margin:0; font-size: 13px;">Panel admin — privat, cuma buat owner</p>
+        </div>
+      </div>
+      <form id="login-form">
+        <div class="field">
+          <label for="password">Password admin</label>
+          <input type="password" id="password" required minlength="6" />
+        </div>
+        <p class="error-text" id="login-error" hidden></p>
+        <button type="submit" class="btn btn-primary btn-block">Masuk sebagai admin</button>
+      </form>
+    </div>
+  </div>
+  <div id="toast"></div>
+  <script type="module" src="/src/scripts/admin-auth.js"></script>
+</body>
+</html>
