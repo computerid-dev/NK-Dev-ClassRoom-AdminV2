@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Admin — NK-Dev ClassRoom</title>
+  <link rel="icon" href="/assets/icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="/dashboard.html">
+        <img src="/assets/icons/icon-192.png" alt="Logo" />
+        NK-Dev ClassRoom · Admin
+      </a>
+      <button class="btn btn-outline btn-sm" id="btn-logout">Keluar</button>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 32px 24px 80px;">
+    <div class="role-toggle" style="max-width: 360px; margin-bottom: 28px;">
+      <button type="button" class="active" data-tab="users">Pengguna</button>
+      <button type="button" data-tab="rooms">Room</button>
+    </div>
+
+    <!-- ============ TAB PENGGUNA ============ -->
+    <section id="tab-users">
+      <div class="row spread gap-3" style="margin-bottom: 16px; flex-wrap: wrap;">
+        <input type="text" id="user-search" placeholder="Cari nama atau email..." style="flex:1; min-width:220px; border:1px solid var(--color-border); border-radius:var(--radius-sm); padding:10px 12px;" />
+      </div>
+      <div class="card">
+        <div id="user-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ TAB ROOM ============ -->
+    <section id="tab-rooms" style="display:none;">
+      <div class="card">
+        <div id="room-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ MODAL DETAIL ROOM ============ -->
+  <div class="modal-backdrop" id="room-detail-modal" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="room-detail-title">Detail room</h2>
+        <button class="icon-btn" data-close="room-detail-modal">✕</button>
+      </div>
+      <div id="room-detail-body"></div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <script type="module" src="/src/scripts/admin-dashboard.js"></script>
+</body>
+</html>
